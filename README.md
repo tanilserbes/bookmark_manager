@@ -26,3 +26,12 @@ view-->controller: "html"
 controller-->client: "response 200 OK"
 
 Please find the diagram in image folder. 
+
+---------------
+
+To set up the DB.....
+
+- connect to 'psql' in the terminal
+- run this command - CREATE DATABASE bookmark_manager;
+- run the commands in the db/migrations folder
+
