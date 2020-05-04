@@ -74,3 +74,12 @@ A common database system for modern web development is called PostgreSQL. Postgr
 - run this command - CREATE DATABASE bookmark_manager;
 - run the commands in the db/migrations folder
 
+Using Select to view the table
+--bookmark_manager=# SELECT * FROM bookmarks;
+Using insert to add data to a table
+--INSERT INTO bookmarks VALUES(1, 'http://www.makersacademy.com');
+--INSERT INTO bookmarks (url) VALUES ('http://www.askjeeves.com');
+--bookmark_manager=# SELECT * FROM bookmarks LIMIT 2;
+--SELECT * FROM bookmarks WHERE url = 'http://www.makersacademy.com';
+--UPDATE bookmarks SET url = 'http://www.destroyallsoftware.com' WHERE url = 'http://www.askjeeves.com';
+--DELETE FROM bookmarks WHERE url = 'http://www.twitter.com';
