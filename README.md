@@ -5,9 +5,9 @@ This code is intended as a supplementary guide for [bookmark manager](https://gi
 ## User Stories
 
 ```
-As user 
-I am visiting helpful websites,
-So, I want to see a list of existing bookmarks which has useful websites i have saved
+As user, 
+I visit helpful websites everyday.
+So, I would like to see a list of existing bookmarks.
 
 ```
 
@@ -25,11 +25,50 @@ controller -> view:  "[bookmarks]"
 view-->controller: "html"
 controller-->client: "response 200 OK"
 
-Please find the diagram in image folder. 
+Please find the diagram in image folder. (./image/domain_model.png)
 
 ---------------
+## The Ruby Web Project Setup List
 
-To set up the DB.....
+1.Bundle init 
+
+-Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed.
+
+2.Fill the Gemfile
+
+3.Bundle install
+
+4.Rspec --init
+
+5.create config.ru 
+
+-require './app' run BookmarkManager
+
+6.at the top of spec/spec_helper.rb
+
+-ENV['RACK_ENV'] = 'test'
+
+-require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+
+-require 'capybara'
+-require 'capybara/rspec'
+---require 'rspec'
+
+
+Capybara.app = BookmarkManager
+
+-------------
+
+## To set up the DB
+
+```
+As a time-pressed user
+So that I can save a website
+I would like to add the site's address and title to bookmark manager
+```
+
+A common database system for modern web development is called PostgreSQL. PostgreSQL is actually a server that runs a database. Therefore, it can be started, stopped, and interacted with through an interface, psql.
 
 - connect to 'psql' in the terminal
 - run this command - CREATE DATABASE bookmark_manager;

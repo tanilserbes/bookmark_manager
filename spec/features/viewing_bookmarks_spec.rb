@@ -5,7 +5,7 @@ feature 'Viewing Homepage' do
   end
 end
 feature 'Viewing Bookmarks' do 
-  scenario 'Visiting /Bookmarks' do 
+  scenario 'A user can see /Bookmarks' do 
     visit '/bookmarks'
     expect(page).to have_content("www.youtube.com")
     expect(page).to have_content("www.facebook.com")
