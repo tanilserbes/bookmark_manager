@@ -83,4 +83,10 @@ Using insert to add data to a table
 --SELECT * FROM bookmarks WHERE url = 'http://www.makersacademy.com';
 --UPDATE bookmarks SET url = 'http://www.destroyallsoftware.com' WHERE url = 'http://www.askjeeves.com';
 --DELETE FROM bookmarks WHERE url = 'http://www.twitter.com';
+## Setting Database inside the code 
+connection = PG.connect(dbname: 'bookmark_manager')
+result = connection.exec('SELECT * FROM bookmarks;')
+result.map{ |bookmark| bookmark['url'] }
+
 ## 
+
