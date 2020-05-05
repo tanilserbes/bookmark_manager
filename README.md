@@ -88,5 +88,7 @@ connection = PG.connect(dbname: 'bookmark_manager')
 result = connection.exec('SELECT * FROM bookmarks;')
 result.map{ |bookmark| bookmark['url'] }
 
-## 
+## Setting up a Testing Environment
 
+CREATE DATABASE "bookmark_manager_test";
+CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));

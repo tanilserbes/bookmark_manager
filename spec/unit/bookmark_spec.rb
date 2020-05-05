@@ -1,7 +1,13 @@
 require './lib/bookmarks'
 describe Bookmarks do
   describe '.all' do
-    it 'returns bookmars array' do 
+    it 'returns a list of bookmarks' do
+      connection = PG.connect(dbname: 'bookmark_manager_test') 
+      # Add the test data
+      connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
+      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
+      connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")
+
       expect(Bookmarks.all).to include("http://www.makersacademy.com")
       expect(Bookmarks.all).to include("http://www.google.com")
       expect(Bookmarks.all).to include("http://www.destroyallsoftware.com")
