@@ -92,3 +92,12 @@ result.map{ |bookmark| bookmark['url'] }
 
 CREATE DATABASE "bookmark_manager_test";
 CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+
+## Step creating bookmarks
+
+```
+As a user
+So I can store bookmark data for later retrieval
+I want to add a bookmark to Bookmark Manager
+```
+
